@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+livros.db
+livros_leve.tmp
+pg_catalog.csv
+*.tmp

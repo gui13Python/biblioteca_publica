@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biblioteca Livre - Livros gratuitos em EPUB e PDF</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="/">📚 Biblioteca Livre</a>
+    <form class="busca" action="/" method="get">
+      <input type="text" name="q" value="{{ q }}" placeholder="Buscar por título ou autor...">
+      <select name="idioma">
+        <option value="" {% if not idioma %}selected{% endif %}>Todos os idiomas</option>
+        <option value="pt" {% if idioma == 'pt' %}selected{% endif %}>Português</option>
+        <option value="en" {% if idioma == 'en' %}selected{% endif %}>Inglês</option>
+        <option value="es" {% if idioma == 'es' %}selected{% endif %}>Espanhol</option>
+        <option value="fr" {% if idioma == 'fr' %}selected{% endif %}>Francês</option>
+      </select>
+      <select name="categoria">
+        <option value="">Todas as categorias</option>
+        {% for nome in categorias %}
+          <option value="{{ nome }}" {% if categoria == nome %}selected{% endif %}>{{ nome }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Buscar</button>
+    </form>
+  </header>
+
+  <main class="container">
+    {% if sem_catalogo %}
+      <p class="aviso">O catálogo de livros está indisponível no momento. Tente novamente em instantes.</p>
+    {% elif erro %}
+      <p class="aviso">Não foi possível carregar os livros agora. Tente novamente em instantes.</p>
+    {% elif not livros %}
+      <p class="aviso">Nenhum livro encontrado com esses filtros.</p>
+    {% else %}
+      <p class="contagem">{{ total }} livros encontrados</p>
+      <h1>{% if q %}Resultados para "{{ q }}"{% elif categoria %}{{ categoria }}{% else %}Livros populares{% endif %}</h1>
+      <div class="grade">
+        {% for l in livros %}
+        <a class="card" href="/livro/{{ l.id }}">
+          {% if l.capa %}
+            <img src="{{ l.capa }}" alt="Capa de {{ l.titulo }}" loading="lazy" onerror="this.outerHTML='<div class=&quot;sem-capa&quot;>Sem capa</div>'">
+          {% else %}
+            <div class="sem-capa">Sem capa</div>
+          {% endif %}
+          <div class="card-info">
+            <strong>{{ l.titulo }}</strong>
+            <span>{{ l.autores }}</span>
+            <div class="selos">
+              {% for f in l.formatos %}
+                <em>{{ f.rotulo }}</em>
+              {% endfor %}
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+
+      <nav class="paginas">
+        {% if pagina > 1 %}
+          <a href="/?q={{ q }}&idioma={{ idioma }}&categoria={{ categoria }}&pagina={{ pagina - 1 }}">← Anterior</a>
+        {% endif %}
+        <span>Página {{ pagina }}</span>
+        {% if tem_proxima %}
+          <a href="/?q={{ q }}&idioma={{ idioma }}&categoria={{ categoria }}&pagina={{ pagina + 1 }}">Próxima →</a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  </main>
+
+  {% include "rodape.html" %}
+</body>
+</html>

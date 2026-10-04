@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block titulo %}Política de Privacidade{% endblock %}
+{% block descricao %}Saiba quais dados a {{ site_nome }} coleta, como usamos cookies e anúncios do Google AdSense e quais são os seus direitos.{% endblock %}
+{% block conteudo %}
+<h1>Política de Privacidade</h1>
+<p class="data">Última atualização: {{ atualizado_em }}</p>
+
+<p>Esta política explica como o site <strong>{{ site_nome }}</strong>, mantido pela <strong>{{ marca }}</strong>, trata as informações das pessoas que o visitam, em conformidade com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).</p>
+
+<h2>1. Dados que coletamos</h2>
+<p>Você não precisa criar conta nem informar nome, e-mail ou qualquer dado pessoal para usar o site. Coletamos apenas:</p>
+<ul>
+  <li><strong>Uso do site:</strong> a plataforma de hospedagem pode registrar os acessos e os downloads iniciados (qual página ou livro, formato, data e hora). Esses registros técnicos não identificam você pelo nome.</li>
+  <li><strong>Dados técnicos de acesso:</strong> o servidor de hospedagem pode registrar automaticamente informações como endereço IP, tipo de navegador e páginas acessadas. Isso é usado para segurança, estatísticas e funcionamento do site.</li>
+  <li><strong>Mensagens que você nos envia:</strong> se você entrar em contato por e-mail, usamos seu e-mail e o conteúdo da mensagem apenas para responder.</li>
+</ul>
+
+<h2>2. Cookies</h2>
+<p>Cookies são pequenos arquivos que ficam no seu navegador. O site, por si só, não usa cookies de login ou de cadastro. Porém, serviços de terceiros usados no site, como o de anúncios, podem usar cookies para funcionar, como explicado a seguir.</p>
+
+<h2>3. Publicidade e Google AdSense</h2>
+<p>O site poderá exibir anúncios do Google AdSense. Sobre isso:</p>
+<ul>
+  <li>Fornecedores terceiros, incluindo o Google, usam cookies para veicular anúncios com base nas suas visitas anteriores a este e a outros sites.</li>
+  <li>O uso de cookies de publicidade permite que o Google e seus parceiros exibam anúncios para você com base na sua navegação.</li>
+  <li>Você pode desativar a publicidade personalizada em <a href="https://adssettings.google.com" target="_blank" rel="noopener">Configurações de anúncios do Google</a>. Também é possível optar por não receber anúncios personalizados de outros fornecedores em <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a>.</li>
+  <li>Para saber como o Google usa dados de sites parceiros, acesse <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>.</li>
+</ul>
+<p>Você também pode bloquear ou apagar cookies nas configurações do seu navegador. Algumas funções de sites de terceiros podem deixar de funcionar nesse caso.</p>
+
+<h2>4. Links e serviços externos</h2>
+<p>Capas de livros e arquivos para download são fornecidos pelo <a href="https://www.gutenberg.org" target="_blank" rel="noopener">Project Gutenberg</a>. Ao abrir ou baixar um livro, você acessa o site deles, que tem sua própria política de privacidade. O mesmo vale para outros links externos que o site possa conter. Não controlamos nem somos responsáveis pelas práticas de privacidade desses sites.</p>
+
+<h2>5. Seus direitos (LGPD)</h2>
+<p>Você pode, a qualquer momento, solicitar confirmação sobre o tratamento de seus dados, acesso, correção, anonimização, exclusão ou informações sobre compartilhamento. Como não exigimos cadastro, em geral só temos os dados que você mesmo nos enviar por e-mail. Para exercer seus direitos, escreva para <a href="mailto:{{ email }}">{{ email }}</a>.</p>
+
+<h2>6. Crianças e adolescentes</h2>
+<p>O site não é direcionado a crianças e não coleta intencionalmente dados pessoais de menores de idade. Se você é responsável por um menor e acredita que ele nos enviou dados pessoais, entre em contato para que possamos removê-los.</p>
+
+<h2>7. Segurança</h2>
+<p>Adotamos medidas razoáveis para proteger as informações tratadas pelo site, mas nenhum sistema na internet é totalmente seguro.</p>
+
+<h2>8. Alterações nesta política</h2>
+<p>Podemos atualizar esta política para refletir mudanças no site ou na legislação. A data da última atualização fica sempre no topo desta página.</p>
+
+<h2>9. Contato</h2>
+<p>Dúvidas sobre esta política? Fale com a gente em <a href="mailto:{{ email }}">{{ email }}</a> ou na página de <a href="/contato">Contato</a>.</p>
+{% endblock %}
