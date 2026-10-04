@@ -29,8 +29,8 @@ from flask import (Flask, abort, jsonify, redirect, render_template, request,
 from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 
 BASE = Path(__file__).parent
-DB_LOCAL = BASE / "livros.db"        # usado se existir (ex.: no seu PC)
-DB_PACOTE = BASE / "livros.db.gz"    # vai no git; descompactado em /tmp quando precisa
+DB_LOCAL = BASE / "full.db"
+DB_PACOTE = BASE / "full.gz"    # vai no git; descompactado em /tmp quando precisa
 ESPERA = 10           # segundos que o usuário precisa aguardar
 TOKEN_VALIDADE = 300  # segundos que o token fica válido após o tempo de espera
 POR_PAGINA = 32
