@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block titulo %}Termos de Uso{% endblock %}
+{% block descricao %}Termos de uso da {{ site_nome }}: como o site funciona, limites de responsabilidade e regras sobre os livros de domínio público.{% endblock %}
+{% block conteudo %}
+<h1>Termos de Uso</h1>
+<p class="data">Última atualização: {{ atualizado_em }}</p>
+
+<p>Ao usar o site <strong>{{ site_nome }}</strong>, mantido pela <strong>{{ marca }}</strong>, você concorda com os termos abaixo. Se não concordar, pedimos que não utilize o site.</p>
+
+<h2>1. O que é o site</h2>
+<p>A {{ site_nome }} é um catálogo que facilita a busca de livros de domínio público disponibilizados pelo Project Gutenberg. <strong>Não hospedamos os arquivos dos livros</strong>: os downloads e a leitura online são feitos diretamente nos servidores do Gutenberg.</p>
+
+<h2>2. Domínio público e direitos autorais</h2>
+<p>O Project Gutenberg disponibiliza obras que estão em domínio público nos Estados Unidos. Os prazos de proteção variam de país para país. Em alguns países, incluindo o Brasil, uma obra pode continuar protegida por direitos autorais por mais tempo (no Brasil, em regra, 70 anos após a morte do autor). Por isso, <strong>é sua responsabilidade verificar se o uso que você pretende fazer de uma obra é permitido no seu país</strong>. Se você é titular de direitos e quer que uma obra deixe de aparecer aqui, veja a página de <a href="/direitos-autorais">Direitos autorais</a>.</p>
+
+<h2>3. Uso permitido</h2>
+<p>Você pode usar o site para buscar, ler e baixar livros para uso pessoal. É proibido tentar prejudicar o funcionamento do site, burlar o tempo de espera dos downloads, realizar coleta automatizada em massa (scraping) ou usar o site para qualquer atividade ilegal.</p>
+
+<h2>4. Tempo de espera nos downloads</h2>
+<p>Antes de liberar o download, o site exibe uma contagem regressiva de alguns segundos. Ela existe para controlar o uso do serviço e pode ser alterada a qualquer momento.</p>
+
+<h2>5. Anúncios</h2>
+<p>O site pode exibir anúncios de terceiros, como o Google AdSense, para custear sua manutenção. Não nos responsabilizamos pelo conteúdo dos anúncios nem pelos sites para onde eles levam. Veja a <a href="/privacidade">Política de Privacidade</a>.</p>
+
+<h2>6. Isenção de garantias e limitação de responsabilidade</h2>
+<p>O site é oferecido "como está", sem garantia de funcionamento ininterrupto, de que o catálogo esteja completo ou livre de erros, ou de que os links externos estejam sempre disponíveis. A {{ marca }} não se responsabiliza por danos decorrentes do uso do site ou de arquivos baixados de sites de terceiros. Recomendamos manter seu antivírus atualizado.</p>
+
+<h2>7. Propriedade intelectual do site</h2>
+<p>O design, os textos próprios e o código do site pertencem à {{ marca }}. Os livros e os dados do catálogo pertencem aos respectivos autores, editores e ao Project Gutenberg, conforme as regras de cada um.</p>
+
+<h2>8. Alterações</h2>
+<p>Podemos alterar estes termos a qualquer momento. O uso do site depois da alteração significa que você concorda com a nova versão.</p>
+
+<h2>9. Lei aplicável</h2>
+<p>Estes termos são regidos pelas leis da República Federativa do Brasil.</p>
+
+<h2>10. Contato</h2>
+<p>Dúvidas? Escreva para <a href="mailto:{{ email }}">{{ email }}</a>.</p>
+{% endblock %}

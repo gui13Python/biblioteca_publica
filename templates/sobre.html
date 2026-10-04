@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block titulo %}Sobre nós{% endblock %}
+{% block descricao %}Conheça a {{ site_nome }}, um projeto da {{ marca }}: uma biblioteca digital gratuita com livros de domínio público.{% endblock %}
+{% block conteudo %}
+<h1>Sobre nós</h1>
+
+<h2>Quem somos</h2>
+<p>A <strong>{{ site_nome }}</strong> é um projeto da <strong>{{ marca }}</strong>, marca de um desenvolvedor brasileiro independente. Estou começando no mundo do desenvolvimento e o que mais gosto de fazer é criar coisas que ajudem outras pessoas. Este site nasceu dessa ideia: facilitar o acesso gratuito à leitura.</p>
+
+<h2>O que você encontra aqui</h2>
+<p>Uma biblioteca digital com dezenas de milhares de livros gratuitos e legais. Você pode buscar por título ou autor, filtrar por idioma e por categoria (romance, aventura, ficção científica, filosofia, poesia e muito mais) e ver informações e capa de cada obra. Para cada livro, oferecemos os formatos EPUB, Kindle (AZW3), HTML (para ler online no navegador) e TXT.</p>
+
+<h2>De onde vêm os livros</h2>
+<p>O catálogo vem do <a href="https://www.gutenberg.org" target="_blank" rel="noopener">Project Gutenberg</a>, uma biblioteca digital sem fins lucrativos que preserva obras de domínio público. A {{ site_nome }} não hospeda os arquivos dos livros: organizamos o catálogo para facilitar sua busca, e o download é feito diretamente no Gutenberg. Veja mais detalhes nos nossos <a href="/termos">Termos de Uso</a> e na página de <a href="/direitos-autorais">Direitos autorais</a>.</p>
+
+<h2>Como o site se mantém</h2>
+<p>O acesso é gratuito, sem cadastro. Para cobrir os custos de manter o site no ar, ele poderá exibir anúncios, como os do Google AdSense. Explicamos como isso funciona na nossa <a href="/privacidade">Política de Privacidade</a>.</p>
+
+<h2>Acompanhe nosso trabalho</h2>
+<p>Eu mostro o que estou aprendendo e criando nas redes. Vem junto:</p>
+<ul>
+  {% for nome, link in tiktoks %}
+    <li><a href="{{ link }}" target="_blank" rel="noopener">TikTok {{ nome }}</a></li>
+  {% endfor %}
+</ul>
+
+<h2>Fale com a gente</h2>
+<p>Sugestões, dúvidas ou correções são bem-vindas. Veja a página de <a href="/contato">Contato</a>.</p>
+{% endblock %}

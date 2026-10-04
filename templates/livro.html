@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ livro.titulo }} - Download grátis | Biblioteca Livre</title>
+  <link rel="stylesheet" href="/style.css">
+  {% if adsense_id %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsense_id }}" crossorigin="anonymous"></script>
+  {% endif %}
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="/">📚 Biblioteca Livre</a>
+  </header>
+
+  <main class="container detalhe">
+    <div class="detalhe-capa">
+      {% if livro.capa %}
+        <img src="{{ livro.capa }}" alt="Capa de {{ livro.titulo }}" onerror="this.outerHTML='<div class=&quot;sem-capa&quot;>Sem capa</div>'">
+      {% else %}
+        <div class="sem-capa">Sem capa</div>
+      {% endif %}
+    </div>
+
+    <div class="detalhe-info">
+      <h1>{{ livro.titulo }}</h1>
+      <p class="autor">{{ livro.autores }}</p>
+
+      <ul class="meta">
+        <li><b>Idioma:</b> {{ livro.idiomas or '—' }}</li>
+      </ul>
+
+      {% if livro.resumo %}
+        <p class="resumo">{{ livro.resumo }}</p>
+      {% endif %}
+
+      {% if livro.assuntos %}
+        <div class="assuntos">
+          {% for a in livro.assuntos %}<span>{{ a }}</span>{% endfor %}
+        </div>
+      {% endif %}
+
+      {% with slot=slots.livro_topo %}{% include "anuncio.html" %}{% endwith %}
+
+      <h2>Baixar grátis</h2>
+      <div class="botoes" id="botoes" data-livro="{{ livro.id }}">
+        {% for f in livro.formatos %}
+          <button class="btn-download" data-formato="{{ f.chave }}">
+            Baixar {{ f.rotulo }}
+          </button>
+        {% else %}
+          <p class="aviso">Nenhum formato disponível para este livro.</p>
+        {% endfor %}
+      </div>
+
+      <div class="espera" id="espera" hidden>
+        <p>Seu download começa em <strong id="segundos">{{ espera }}</strong> segundos...</p>
+        <div class="barra"><div id="progresso"></div></div>
+      </div>
+
+      {% with slot=slots.livro_baixo %}{% include "anuncio.html" %}{% endwith %}
+    </div>
+  </main>
+
+  {% include "rodape.html" %}
+
+  <script src="/script.js"></script>
+</body>
+</html>

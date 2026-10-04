@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}{% endblock %} | {{ site_nome }}</title>
+  <meta name="description" content="{% block descricao %}{% endblock %}">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="/">📚 {{ site_nome }}</a>
+  </header>
+
+  <main class="container pagina">
+    {% block conteudo %}{% endblock %}
+  </main>
+
+  {% include "rodape.html" %}
+</body>
+</html>

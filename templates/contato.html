@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block titulo %}Contato{% endblock %}
+{% block descricao %}Entre em contato com a {{ site_nome }}: dúvidas, sugestões, correções e pedidos de remoção de conteúdo.{% endblock %}
+{% block conteudo %}
+<h1>Contato</h1>
+<p>Quer tirar uma dúvida, sugerir uma melhoria, avisar sobre algum erro ou fazer um pedido de remoção de conteúdo? É só falar com a gente.</p>
+
+<h2>E-mail</h2>
+<p><a href="mailto:{{ email }}">{{ email }}</a></p>
+<p>Respondemos assim que possível. Para pedidos de remoção por direitos autorais, veja as instruções na página de <a href="/direitos-autorais">Direitos autorais</a>.</p>
+
+<h2>Redes sociais</h2>
+<ul>
+  {% for nome, link in tiktoks %}
+    <li><a href="{{ link }}" target="_blank" rel="noopener">TikTok {{ nome }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

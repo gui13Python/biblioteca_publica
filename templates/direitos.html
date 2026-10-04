@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block titulo %}Direitos autorais e remoção de conteúdo{% endblock %}
+{% block descricao %}Política de direitos autorais da {{ site_nome }} e como solicitar a remoção de uma obra do catálogo.{% endblock %}
+{% block conteudo %}
+<h1>Direitos autorais e remoção de conteúdo</h1>
+<p class="data">Última atualização: {{ atualizado_em }}</p>
+
+<p>A {{ marca }} respeita os direitos de autores e editores. A {{ site_nome }} <strong>não hospeda os arquivos dos livros</strong>: ela exibe um catálogo de obras do <a href="https://www.gutenberg.org" target="_blank" rel="noopener">Project Gutenberg</a>, que disponibiliza livros em domínio público nos Estados Unidos.</p>
+
+<h2>Por que isso importa</h2>
+<p>Uma obra pode estar em domínio público em um país e ainda estar protegida em outro. Se você é autor, herdeiro, editor ou representante de um titular de direitos e acredita que uma obra do nosso catálogo não deveria estar disponível para quem acessa do Brasil ou de outro país, queremos saber.</p>
+
+<h2>Como pedir a remoção de uma obra</h2>
+<p>Envie um e-mail para <a href="mailto:{{ email }}">{{ email }}</a> com:</p>
+<ul>
+  <li>o título e o autor da obra, e o endereço (URL) da página dela no nosso site;</li>
+  <li>seu nome completo e seus dados de contato;</li>
+  <li>a explicação de por que você é titular dos direitos ou representa o titular;</li>
+  <li>a informação de que você pede a remoção de boa-fé.</li>
+</ul>
+
+<h2>O que fazemos</h2>
+<p>Ao receber um pedido com essas informações, a obra deixa de aparecer no nosso catálogo, e não exibimos mais a página dela nem os botões de download. Como o arquivo em si fica no Project Gutenberg, para que ele seja retirado de lá é preciso contatar o Gutenberg diretamente.</p>
+
+<h2>Dúvidas</h2>
+<p>Fale com a gente pela página de <a href="/contato">Contato</a>.</p>
+{% endblock %}
